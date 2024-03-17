@@ -66,7 +66,7 @@ The accuracy of results depend on the location. For San Francisco Bay area, the 
   <img src="images/cali.png" width="600" alt="fig1">
 </p>
 
-Similarly Soutern Japan is more accurate than Northern Japan. These variances could be related to local geological features such as basin effect.
+Similarly Southern Japan is more accurate than Northern Japan. These variances could be related to local geological features such as basin effect.
 
 <p align="center">
   <img src="images/japan.png" width="600" alt="fig1">
