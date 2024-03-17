@@ -54,6 +54,14 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 
 
 # Results
+Using historical earthquake data, risk factors for a given location can be relatively accurately estimated. K-Neighgbor Regressor algorithm provides the best accuracy for this purpose.
+The accuracy of results depend on the location. For San Francisco Bay area, the model results are more accurate than Los Angeles area. Similarly Soutern Japan is more accurate than Northern Japan. These variances could be related to local geological features such as basin effect.
 
+Results are more accurate for smaller earthquakes and for locations that are further away from the epicenter. This is a disadvantage of the model as, larger earthquakes and locations closer to the epicenter tend to be effected more than others.
 
 # Next Steps
+Although K-Neightbor Regressor performed better, Neural Network was the second best model with no tuning. Neural Network hyper-parameters can be optimized and there is a potential to get more accuracy as a result.
+
+As an enhancement to the model, features capturing local factors should be explored. Those features may improve the efficiency for certain locations such as Los Angeles and Northern Japan.
+
+Finally, impact of large earthquakes in relatively closer locations to the epicenter could be seperately evaluated. Such model may capture majority of earthquake losses more accurately. 
