@@ -21,19 +21,19 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 - PGA (g): Peak ground acceleration. This is used as the target variable
 - Strike (deg): Direction of the fault relative to North
 - Dip (deg): Angle of the fault relative to horizontal
-- Rake Angle (deg)': Direction of fault motion with respect to the strike
-- Hypocenter Latitude (deg)'
-- Hypocenter Longitude (deg)'
-- Hypocenter Depth (km)': Depth of the earthquake at hypocenter
-- Depth to Top Of Fault Rupture Model': Distance from the surface to the rupture plane
-- Fault Rupture Width (km)': Width of the rupture
-- Fault Rupture Area (km^2)': Area of the rupture
+- Rake Angle (deg): Direction of fault motion with respect to the strike
+- Hypocenter Latitude (deg)
+- Hypocenter Longitude (deg)
+- Hypocenter Depth (km): Depth of the earthquake at hypocenter
+- Depth to Top Of Fault Rupture Model: Distance from the surface to the rupture plane
+- Fault Rupture Width (km): Width of the rupture
+- Fault Rupture Area (km^2): Area of the rupture
 - EpiD (km)': Distance to epicenter
 - HypD (km)': Distance to hypocenter
-- ClstD (km)': Closest distance between site to the rupture
+- ClstD (km): Closest distance between site to the rupture
 - Vs30 (m/s) selected for analysis': Shear wave velocity at 30 meters of the soil
-- Station Latitude'
-- Station Longitude',
+- Station Latitude
+- Station Longitude'
 - PGA (g)': Peak ground acceleration. This is the target variable that predicts magnitude of the shake at a given location
 
 # Data Preperation
@@ -62,6 +62,8 @@ For San Francisco Bay area, the model results are more accurate than Los Angeles
 Results are more accurate for smaller earthquakes and for locations that are further away from the epicenter. This is a disadvantage of the model as, larger earthquakes and locations closer to the epicenter tend to be effected more than others.
 
 Overall, the results of the study are encouraging and can be quite useful assessing earthquake risk at a given location and earthquake scenario.
+
+Detailed technical analysis can be found here: 
 
 # Next Steps
 Although K-Neightbor Regressor performed better, Neural Network was the second best model with no tuning. Neural Network hyper-parameters can be optimized and there is a potential to get more accuracy as a result.
