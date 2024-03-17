@@ -63,7 +63,7 @@ Results are more accurate for smaller earthquakes and for locations that are fur
 
 Overall, the results of the study are encouraging and can be quite useful assessing earthquake risk at a given location and earthquake scenario.
 
-Detailed technical analysis can be found here[./analysis.ipynb]
+Detailed jupyter notebook of the technical analysis can be found here: https://github.com/bilgeozcay/earthquake/blob/main/analysis.ipynb
 
 # Next Steps
 Although K-Neightbor Regressor performed better, Neural Network was the second best model with no tuning. Neural Network hyper-parameters can be optimized and there is a potential to get more accuracy as a result.
