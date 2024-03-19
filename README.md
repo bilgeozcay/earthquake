@@ -163,7 +163,7 @@ For the models, any feature greater than 0.02 as L1 coefficient was used for ana
 2. K-Nearest Neighbor Regressor based on features selected by L1 regularization, without hyper-parameter tuning -> KNR-Features
 3. Elastic Net based on features selected by L1 regularization -> ElasticNet-Features
 4. Neural Network with 3 hidden layer sizes of 10, 100, 100 and based on features selected by L1 regularization -> MLPRegressor-Features
-5. Neural Network with all 21 columns (including log scale variables) -> MLPregressor-All Features
+5. Neural Network with all 21 columns (including log scale variables) -> MLPRegressor-All Features
 6. K-Nearest Neighbor Regressor based on features selected by L1 regularization, with Grid Search hyper-parameter tuning -> KNR-Optimized
 7. K-Nearest Neighbor Regressor based on expert selected features, with Grid Search hyper-parameter tuning -> KNR=Eng. Optimized. For this model, an expert was consulted to give opinion on best features to use.
 
