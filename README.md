@@ -116,7 +116,7 @@ Any row with a missing column in eliminated from the dataset to ensure regressio
 Data was split into training and test datasets, to ensure error is measured seperately for those and models are not overfitting. 80% training and 20% test split was used.
 
 # Modeling
-A total of 5 different model types are run:
+A total of 4 different model types are run:
 - Linear Regression (LinearRegression)
 - K-Neareast Neighbor Regression (KNR)
 - Elastic Net (ElasticNet)
