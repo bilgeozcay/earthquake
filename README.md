@@ -125,7 +125,9 @@ A total of 4 different model types are run:
 For each model, various feature combinations and hyperparapeters are explored. In total, modeling was done in 8 iterations.
 
 ## Evaluation Metrics
-As the main metric, Mean Average Error (MAE) was used on training and test datasets. The scatter plot comparing actual PGA and precited PGA was used as a suplementary visualization.
+As the performance metric, Mean Absolute Error (MAE) was used on training and test datasets. We use absolute error, because it is easier to interpret the metric to assess the impact on a structure. An absolute error of 0.1 is insignificant for a given data point, whereas an absolute error of 1 will make 1g difference in terms of acceleration exerted on a structure.
+
+The scatter plot comparing actual PGA and precited PGA was used as a suplementary visualization.
 
 ## Baseline Model
 Linear Regression was used as a Baseline model with 3 variables:
