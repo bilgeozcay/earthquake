@@ -44,7 +44,7 @@ Data encomposses a wide variety of earthquake magnitudes from 3 to 8. This is qu
   <img src="images/mag_dist.png" width="600" alt="fig1">
 </p>
 
-In terms of PGA, data is heavily skewed towards lower values. This is a disadvanted of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
+In terms of PGA, data is heavily skewed towards lower values. This is a disadvantege of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
 
 <p align="center">
   <img src="images/pga_0.05_dist.png" width="600" alt="fig1">
