@@ -22,8 +22,8 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 - Strike (deg): Direction of the fault relative to North
 - Dip (deg): Angle of the fault relative to horizontal
 - Rake Angle (deg): Direction of fault motion with respect to the strike
-- Hypocenter Latitude (deg)
-- Hypocenter Longitude (deg)
+- Hypocenter Latitude (deg): Latitude of hypocenter
+- Hypocenter Longitude (deg): Longiture of hypocenter
 - Hypocenter Depth (km): Depth of the earthquake at hypocenter
 - Depth to Top Of Fault Rupture Model: Distance from the surface to the rupture plane
 - Fault Rupture Width (km): Width of the rupture
@@ -32,9 +32,51 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 - HypD (km)': Distance to hypocenter
 - ClstD (km): Closest distance between site to the rupture
 - Vs30 (m/s) selected for analysis': Shear wave velocity at 30 meters of the soil
-- Station Latitude
-- Station Longitude'
+- Station Latitude: Latitude of the station
+- Station Longitude: Longtitude of the station
 - PGA (g)': Peak ground acceleration. This is the target variable that predicts magnitude of the shake at a given location
+
+
+## Data Distribution
+Data encomposses a wide variety of earthquake magnitudes from 3 to 8. This is quite useful as we can find models that predict PGA for small or large earthquakes.
+
+<p align="center">
+  <img src="images/mag_dist" width="600" alt="fig1">
+</p>
+
+In terms of PGA, data is heavily skewed towards lower values. This is a disadvanted of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
+
+<p align="center">
+  <img src="images/pga_0.05_dist.png" width="600" alt="fig1">
+</p>
+
+The distribution of the distance from the epicenter is concentrated around <400km. This is ideal as earthquakes rarely cause structural damage beyond that radius.
+
+<p align="center">
+  <img src="images/epicenter_dist.png" width="600" alt="fig1">
+</p>
+
+Finally data set covers a wide range of VS30 values. VS30 correlates with the type of the gound material (sand, soil, rock, etc) and cna be used as a factor in predicting ground shaking.
+
+<p align="center">
+  <img src="images/vs30_dist.png" width="600" alt="fig1">
+</p>
+
+
+
+## Relationships Between Features
+PGA drops quickly moving away from the Epicenter, as expected.
+
+<p align="center">
+  <img src="images/epi_pga.png" width="600" alt="fig1">
+</p>
+
+Logarithmic scale captures the relationship much better as seen below. Each magnitude clearly creates some bands in terms of how logarithm of PGA varies with the logarithm of distance to epicenter.
+
+<p align="center">
+  <img src="images/epi_pga_mag.png" width="600" alt="fig1">
+</p>
+
 
 # Data Preperation
 
