@@ -28,8 +28,8 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 - Depth to Top Of Fault Rupture Model: Distance from the surface to the rupture plane
 - Fault Rupture Width (km): Width of the rupture
 - Fault Rupture Area (km^2): Area of the rupture
-- EpiD (km)': Distance to epicenter
-- HypD (km)': Distance to hypocenter
+- EpiD (km): Distance to epicenter
+- HypD (km): Distance to hypocenter
 - ClstD (km): Closest distance between site to the rupture
 - Vs30 (m/s) selected for analysis': Shear wave velocity at 30 meters of the soil
 - Station Latitude: Latitude of the station
