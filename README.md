@@ -182,10 +182,12 @@ The training and test error of each iteration is summarized below.
 |KNR-Optimized|0.000097|0.012715|
 |KNR-Eng. Optimized|0.000091|0.000091|
 
-In terms of training data set, K-Nearest Neighbor Regressor with expert inputs, optimized by grid search performed the best. Second best model was K-Nearest Neighbor Regressor with features selected by the L1 regularization.
-In terms of test data set K-Nearest Neighbor Regressor was the best performer as well. In summary, K-Nearest Neighbor Regressor seems to be the best fit for this exercise.
+In terms of training data set, K-Nearest Neighbor Regressor with expert inputs, optimized by grid search performed the best.
+Second best model was K-Nearest Neighbor Regressor with features selected by the L1 regularization.
+In terms of test data set K-Nearest Neighbor Regressor was the best performer as well.
+In summary, K-Nearest Neighbor Regressor seems to be the best fit for this exercise.
 
-KNR-Eng. Optimized provided a much better prediction as captured on the scatter plot below.
+K-Nearest Neighbor Regressor with expert inputs greatly improve the results compared to the baseline model.
 <p align="center">
   <img src="images/knr_opt_eng_actual_pred.png" width="600" alt="fig1">
 </p>
