@@ -77,22 +77,124 @@ Logarithmic scale captures the relationship much better as seen below. Each magn
   <img src="images/epi_pga_mag.png" width="600" alt="fig1">
 </p>
 
+Correlations between the variables show positive correlation between PGA and Earthquake Magnitude, Fault Rupture Width. There is negative correlation between Depth of the Fault Rupture, Distance to Epicenter. These relationships are as expected.
+<p align="center">
+  <img src="images/corr.png" width="600" alt="fig1">
+</p>
+
 
 # Data Preperation
+Based on the findings, a total of 17 variables are selected for modeling. These variables are as follows:
+- Earthquake Magnitude
+- Strike (deg)
+- Dip (deg)
+- Rake Angle (deg)
+- Hypocenter Latitude (deg)
+- Hypocenter Longitude (deg)
+- Hypocenter Depth (km)
+- Depth to Top Of Fault Rupture Model
+- Fault Rupture Width (km)
+- Fault Rupture Area (km^2)
+- EpiD (km)
+- HypD (km)
+- ClstD (km)
+- Vs30 (m/s) selected for analysis
+- Station Latitude
+- Station Longitude
+- PGA (g)
 
+Since all variables are continuous variables, no encoding is necessary. However standard scaler is applied to all data before feeding to each model, as a best practice.
+
+To capture the logaritmic relationships, log versions are added for the following variables:
+- EpiD (km)
+- HypD (km)
+- ClstD (km)
+- Vs30 (m/s) selected for analysis
+
+Any row with a missing column in eliminated from the dataset to ensure regression models can be fed.
+
+Data was split into training and test datasets, to ensure error is measured seperately for those and models are not overfitting. 80% training and 20% test split was used.
 
 # Modeling
+A total of 5 different model types are run:
+- Linear Regression (LinearRegression)
+- K-Neareast Neighbor Regression (KNR)
+- Elastic Net (ElasticNet)
+- Neural Networks - Multi-layer Perceptron Regressor (MLPregressor)
+
+For each model, various feature combinations and hyperparapeters are explored. In total, modeling was done in 8 iterations.
 
 ## Evaluation Metrics
+As the main metric, Mean Average Error (MAE) was used on training and test datasets. The scatter plot comparing actual PGA and precited PGA was used as a suplementary visualization.
 
 ## Baseline Model
+Linear Regression was used as a Baseline model with 3 variables:
+- Earthquake Magnitude
+- EpiD (km)
+- Vs30 (m/s) selected for analysis
+
+MAE for training and test datasets were measured as 0.031 and 0.032.
+Plotting actual and predicted PGA values shows that, model did not accurately predict PGAs greater than 0.2.
+
+<p align="center">
+  <img src="images/base_actual_pred.png" width="600" alt="fig1">
+</p>
 
 ## Feature Selection
+Bacause of the high number of variables, L1 regularization (Lasso) was utilized for feature selection. L1 regularization indicates that following are the relative value of the variables.
+
+<p align="center">
+  <img src="images/feat_select.png" width="600" alt="fig1">
+</p>
+
+For the models, any feature greater than 0.02 as L1 coefficient was used for analysis. These features are:
+- Earthquake Magnitude
+- Hypocenter Latitude (deg)
+- EpiD (km)
+- ClstD (km)
+- Station Latitude
+- EpiD (km) - Log
+- HypD (km) - Log
+- ClstD (km) - Log
 
 ## Alternative Models and Optimization
-
+7 additional models were run:
+1. Linear Regression based on features selected by L1 regularization -> LinReg-Features
+2. K-Nearest Neighbor Regressor based on features selected by L1 regularization, without hyper-parameter tuning -> KNR-Features
+3. Elastic Net based on features selected by L1 regularization -> ElasticNet-Features
+4. Neural Network with 3 hidden layer sizes of 10, 100, 100 and based on features selected by L1 regularization -> MLPRegressor-Features
+5. Neural Network with all 21 columns (including log scale variables) -> MLPregressor-All Features
+6. K-Nearest Neighbor Regressor based on features selected by L1 regularization, with Grid Search hyper-parameter tuning -> KNR-Optimized
+7. K-Nearest Neighbor Regressor based on expert selected features, with Grid Search hyper-parameter tuning -> KNR=Eng. Optimized. For this model, an expert was consulted to give opinion on best features to use.
 
 # Evaluation
+
+The training and test error of each iteration is summarized below.
+
+|Model|Training MAE|Test MAE|
+|-----|------------|--------|
+|LinReg-Baseline|0.031933|0.032136|
+|LinReg-Features|0.025045|0.025390|
+|KNR-Features|0.010536|0.013157|
+|ElasticNet-Features|0.038280|0.038344|
+|MLPRegressor-Features|0.017873|0.017622|
+|MLPRegressor-All Features|0.017305|0.017908|
+|KNR-Optimized|0.000097|0.012715|
+|KNR-Eng. Optimized|0.000091|0.000091|
+
+In terms of training data set, K-Nearest Neighbor Regressor with expert inputs, optimized by grid search performed the best. Second best model was K-Nearest Neighbor Regressor with features selected by the L1 regularization.
+In terms of test data set K-Nearest Neighbor Regressor was the best performer as well. In summary, K-Nearest Neighbor Regressor seems to be the best fit for this exercise.
+
+KNR-Eng. Optimized provided a much better prediction as captured on the scatter plot below.
+<p align="center">
+  <img src="images/knr_opt_eng_actual_pred.png" width="600" alt="fig1">
+</p>
+
+Following plot visualizes the relative performance of the models.
+
+<p align="center">
+  <img src="images/model_mae.png" width="600" alt="fig1">
+</p>
 
 
 # Results
