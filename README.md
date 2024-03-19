@@ -1,7 +1,7 @@
 # Business Objective
-Earthquakes around the world cause significant damage to property and loss of lives. The objective of this project is, for a given location, predicting how much damage a structure sustain for a nearby earthquake scenario. We will use Peak Ground Acceleration (PGA) as a metric to approximate damage as these two are very closely correlated.
+Earthquakes around the world cause significant damage to property and loss of lives. The objective of this project is, for a given location, predicting how much damage a structure sustains for a nearby earthquake scenario. We will use Peak Ground Acceleration (PGA) as a metric to approximate damage as these two are very closely correlated.
 
-Before making investment in buildings and critical infrastructure, earthquake risk should be assessed for the particular area to minimize loss in the event of an earthquake. Otherwise, investments can be lost in a catastrophic earthquake event. This model can be used by public authorities prior to providing permits for a building or by private entities before making investment decisions. Also it can be utilized by insurance companies to asses risk.
+Before making investment in buildings and critical infrastructure, earthquake risk should be assessed for the particular area to minimize loss in the event of an earthquake. Otherwise, investments can be lost in a catastrophic earthquake event. These types of models can be used by public authorities prior to providing permits for a building or by private entities before making investment decisions. Also it can be utilized by insurance companies to asses risk.
 
 # Data Understanding
 Dataset comes from Pacific Earthquake Engineering Research Center. https://apps.peer.berkeley.edu/ngawest/nga_flatfiles.html
@@ -44,7 +44,7 @@ Data encomposses a wide variety of earthquake magnitudes from 3 to 8. This is qu
   <img src="images/mag_dist.png" width="600" alt="fig1">
 </p>
 
-In terms of PGA, data is heavily skewed towards lower values. This is a disadvanted of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
+In terms of PGA, data is heavily skewed towards lower values. This is a disadvantege of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
 
 <p align="center">
   <img src="images/pga_0.05_dist.png" width="600" alt="fig1">
@@ -56,7 +56,7 @@ The distribution of the distance from the epicenter is concentrated around <400k
   <img src="images/epicenter_dist.png" width="600" alt="fig1">
 </p>
 
-Finally data set covers a wide range of VS30 values. VS30 correlates with the type of the gound material (sand, soil, rock, etc) and cna be used as a factor in predicting ground shaking.
+Finally data set covers a wide range of VS30 values. VS30 correlates with the type of the gound material (sand, soil, rock, etc) and can be used as a factor in predicting ground shaking.
 
 <p align="center">
   <img src="images/vs30_dist.png" width="600" alt="fig1">
@@ -120,12 +120,14 @@ A total of 4 different model types are run:
 - Linear Regression (LinearRegression)
 - K-Neareast Neighbor Regression (KNR)
 - Elastic Net (ElasticNet)
-- Neural Networks - Multi-layer Perceptron Regressor (MLPregressor)
+- Neural Networks - Multi-layer Perceptron Regressor (MLPRegressor)
 
 For each model, various feature combinations and hyperparapeters are explored. In total, modeling was done in 8 iterations.
 
 ## Evaluation Metrics
-As the main metric, Mean Average Error (MAE) was used on training and test datasets. The scatter plot comparing actual PGA and precited PGA was used as a suplementary visualization.
+As the performance metric, Mean Absolute Error (MAE) was used on training and test datasets. We use absolute error, because it is easier to interpret the metric to assess the impact on a structure. An absolute error of 0.1 is insignificant for a given data point, whereas an absolute error of 1 will make 1g difference in terms of acceleration exerted on a structure.
+
+The scatter plot comparing actual PGA and precited PGA was used as a suplementary visualization.
 
 ## Baseline Model
 Linear Regression was used as a Baseline model with 3 variables:
