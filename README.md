@@ -56,7 +56,7 @@ The distribution of the distance from the epicenter is concentrated around <400k
   <img src="images/epicenter_dist.png" width="600" alt="fig1">
 </p>
 
-Finally data set covers a wide range of VS30 values. VS30 correlates with the type of the gound material (sand, soil, rock, etc) and cna be used as a factor in predicting ground shaking.
+Finally data set covers a wide range of VS30 values. VS30 correlates with the type of the gound material (sand, soil, rock, etc) and can be used as a factor in predicting ground shaking.
 
 <p align="center">
   <img src="images/vs30_dist.png" width="600" alt="fig1">
