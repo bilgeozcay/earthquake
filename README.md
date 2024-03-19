@@ -200,7 +200,7 @@ Using historical earthquake data, risk factors for a given location can be relat
 <p align="center">
   <img src="images/model_mae.png" width="600" alt="fig1" class="center">
 
-The accuracy of results depend on the location. For San Francisco Bay area, the model results are more accurate than Los Angeles area.
+The accuracy of results depends on the location. For San Francisco Bay area, the model results are more accurate than Los Angeles area.
 
 <p align="center">
   <img src="images/cali.png" width="600" alt="fig1">
