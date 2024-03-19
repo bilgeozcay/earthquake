@@ -41,7 +41,7 @@ Each measurement has 274 columns. Because of the high number of columns, we will
 Data encomposses a wide variety of earthquake magnitudes from 3 to 8. This is quite useful as we can find models that predict PGA for small or large earthquakes.
 
 <p align="center">
-  <img src="images/mag_dist" width="600" alt="fig1">
+  <img src="images/mag_dist.png" width="600" alt="fig1">
 </p>
 
 In terms of PGA, data is heavily skewed towards lower values. This is a disadvanted of any earthquake dataset, as smaller magnitude earthquakes are much more frequent than larger ones. Also PGA quickly drops as moved away from the epicenter.
