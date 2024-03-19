@@ -185,17 +185,12 @@ The training and test error of each iteration is summarized below.
 In terms of training data set, K-Nearest Neighbor Regressor with expert inputs, optimized by grid search performed the best.
 Second best model was K-Nearest Neighbor Regressor with features selected by the L1 regularization.
 In terms of test data set K-Nearest Neighbor Regressor was the best performer as well.
+
 In summary, K-Nearest Neighbor Regressor seems to be the best fit for this exercise.
 
 K-Nearest Neighbor Regressor with expert inputs greatly improve the results compared to the baseline model.
 <p align="center">
   <img src="images/knr_opt_eng_actual_pred.png" width="600" alt="fig1">
-</p>
-
-Following plot visualizes the relative performance of the models.
-
-<p align="center">
-  <img src="images/model_mae.png" width="600" alt="fig1">
 </p>
 
 
@@ -204,7 +199,6 @@ Using historical earthquake data, risk factors for a given location can be relat
 
 <p align="center">
   <img src="images/model_mae.png" width="600" alt="fig1" class="center">
-
 
 The accuracy of results depend on the location. For San Francisco Bay area, the model results are more accurate than Los Angeles area.
 
