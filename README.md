@@ -120,7 +120,7 @@ A total of 4 different model types are run:
 - Linear Regression (LinearRegression)
 - K-Neareast Neighbor Regression (KNR)
 - Elastic Net (ElasticNet)
-- Neural Networks - Multi-layer Perceptron Regressor (MLPregressor)
+- Neural Networks - Multi-layer Perceptron Regressor (MLPRegressor)
 
 For each model, various feature combinations and hyperparapeters are explored. In total, modeling was done in 8 iterations.
 
