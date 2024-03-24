@@ -182,7 +182,7 @@ The training and test error of each iteration is summarized below.
 |MLPRegressor-Features|0.017873|0.017622|
 |MLPRegressor-All Features|0.017305|0.017908|
 |KNR-Optimized|0.000097|0.012715|
-|KNR-Eng. Optimized|0.000091|0.000091|
+|KNR-Eng. Optimized|0.000091|0.013122|
 
 In terms of training data set, K-Nearest Neighbor Regressor with expert inputs, optimized by grid search performed the best.
 Second best model was K-Nearest Neighbor Regressor with features selected by the L1 regularization.
